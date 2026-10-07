@@ -13,7 +13,9 @@ def reviews(req):
             user_name = form.cleaned_data["username"]
             print(f"User Name is {user_name}")
             return HttpResponseRedirect("/thank-you")
-    form = ReviewForm()
+    
+    else:
+        form = ReviewForm()
     return render(req, "reviews/review.html", {"form": form})
 
 
